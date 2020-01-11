@@ -1,23 +1,30 @@
-'use strict';
+"use strict";
 
-var express = require('express');
-var cors = require('cors');
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const path = require("path");
 
-// require and use "multer"...
-
-var app = express();
+const app = express();
 
 app.use(cors());
-app.use('/public', express.static(process.cwd() + '/public'));
 
-app.get('/', function (req, res) {
-     res.sendFile(process.cwd() + '/views/index.html');
-  });
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.get('/hello', function(req, res){
-  res.json({greetings: "Hello, API"});
+const rootDirectory = path.resolve();
+
+app.use(cors());
+app.use("/public", express.static(rootDirectory + "/public"));
+
+app.get("/", function(request, response) {
+  response.sendFile(rootDirectory + "/views/index.html");
 });
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log('Node.js listening ...');
+app.get("/hello", function(request, response) {
+  response.json({ greetings: "Hello, API" });
+});
+
+app.listen(process.env.PORT || 3000, function() {
+  console.log("Node.js listening ...");
 });

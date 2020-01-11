@@ -1,26 +1,40 @@
 {
-	"name": "file_metadata",
-	"version": "0.0.1",
-	"description": "API project for freeCodeCamp",
-	"main": "server.js",
-	"scripts": {
-		"start": "node server.js"
-	},
-	"dependencies": {
-		"express": "^5.0.0-alpha.2",
-		"cors": "^2.8.1"
-	},
-	"engines": {
-		"node": "4.4.5"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://hyperdev.com/#!/project/welcome-project"
-	},
-	"keywords": [
-		"node",
-		"hyperdev",
-		"express"
-	],
-	"license": "MIT"
+  "name": "file_metadata",
+  "version": "0.0.1",
+  "description": "API project for freeCodeCamp",
+  "main": "server.js",
+  "type": "node",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "custom-env": "^1.0.2",
+    "debug": "~2.6.9",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-unicorn": "^15.0.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mongodb": "^3.4.1",
+    "mongoose": "^5.8.4",
+    "morgan": "~1.9.1",
+    "nodemon": "^1.19.4",
+    "prettier": "^1.19.1"
+  },
+  "engines": {
+    "node": "13.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImADrafter/file_metadata"
+  },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express"
+  ],
+  "license": "MIT"
 }
